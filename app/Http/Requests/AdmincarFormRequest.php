@@ -1,0 +1,68 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+
+class AdmincarFormRequest extends FormRequest
+{
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [
+
+        'carname' => [
+            'required',
+            'string'
+        ],
+        'carprice' => [
+            'required',
+            'string'
+        ],
+        'carmodel' => [
+            'required',
+            'string'
+        ],
+        'carseats' => [
+            'required',
+            'string'
+        ],
+        'carhistory' => [
+            'required',
+            'string'
+        ],
+        'fueltype' => [
+            'required',
+            'string'
+        ],
+        'cartype' => [
+            'required',
+            'string'
+        ],
+        'image' => [
+            'nullable',
+            'mimes:jpeg,png'
+        ],
+        'status' => [
+            'required',
+            'string'
+        ],
+
+        ];
+    }
+}
